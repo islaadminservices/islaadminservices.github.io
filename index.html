@@ -51,6 +51,27 @@
       color: #0097b2;
       text-decoration: none;
     }
+    .banner {
+  background: #2a9d8f;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.banner-track {
+  display: inline-block;
+  padding: 10px 0;
+  animation: scroll 15s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
   </style>
 </head>
 <body>
@@ -58,6 +79,12 @@
 <header>
   <h1>Isla Administrative Services</h1>
   <p>Reliable Administrative & Transcription Support for Growing Businesses</p>
+<div class="banner">
+  <div class="banner-track">
+    <span>Reliable • Confidential • Bilingual • Detail-Oriented • Professional • Efficient • </span>
+    <span>Reliable • Confidential • Bilingual • Detail-Oriented • Professional • Efficient • </span>
+  </div>
+</div>
 </header>
 
 <section>
