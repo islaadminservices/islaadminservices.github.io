@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="description" content="Isla Administrative Services offers professional administrative support, transcription, and bilingual services in English and Spanish for businesses and professionals.">
 
@@ -72,6 +72,7 @@
   to {
     transform: translateX(-50%);
   }
+}
 
   .cta-button {
   display: inline-block;
@@ -88,59 +89,77 @@
 .cta-button:hover {
   background: #0097b2;
 }
+
+#lang-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 8px 16px;
+  border: 1px solid #0097b2;
+  background: white;
+  color: #0097b2;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+#lang-toggle:hover {
+  background: #0097b2;
+  color: white;
+}
   </style>
 </head>
 <body>
 
-<header>
+<header style="position: relative;">
+  <button id="lang-toggle">Español</button>
   <p align="center">
   <img src="Adobe Express - file.png" alt="Header Image" style="max-width: 100%; height: auto;"/>
 </p>
-  <p>Reliable Administrative & Transcription Support for Growing Businesses</p>
+  <p data-i18n="headerTagline">Reliable Administrative & Transcription Support for Growing Businesses</p>
 
 </header>
 
 <section>
-  <h2>About</h2>
-  <p>
+  <h2 data-i18n="aboutHeading">About</h2>
+  <p data-i18n="aboutText">
     Isla Administrative Services provides professional administrative and transcription support to businesses and professionals who need reliable, detail-oriented assistance. Our goal is to help you save time, stay organized, and focus on what matters most.
   </p>
   <div class="banner">
   <div class="banner-track">
-    <span> • Commitment • Confidentiality • Efficiency • Punctuality </span>
-    <span> • Commitment • Confidentiality • Efficiency • Punctuality </span>
+    <span data-i18n="bannerText"> • Commitment • Confidentiality • Efficiency • Punctuality </span>
+    <span data-i18n="bannerText"> • Commitment • Confidentiality • Efficiency • Punctuality </span>
   </div>
 </div>
 </section>
 
 <section>
-  <h2>Services</h2>
-  <p>
+  <h2 data-i18n="servicesHeading">Services</h2>
+  <p data-i18n="servicesIntro">
     We understand that every business and professional operates differently. Therefore, we create our packages to fit your specific needs.
   </p>
 
   <div class="card">
-    <h3>Administrative Support</h3>
-    <p>
+    <h3 data-i18n="adminSupportTitle">Administrative Support</h3>
+    <p data-i18n="adminSupportText">
       Calendar and email management, document preparation, data entry and database management, customer service (chat and email), documentation organization, travel coordination, invoice preparation and follow-up, meeting coordination, and office systems organization.
     </p>
   </div>
 
   <div class="card">
-    <h3>Transcription Services</h3>
-    <p>
+    <h3 data-i18n="transcriptionTitle">Transcription Services</h3>
+    <p data-i18n="transcriptionText">
       General transcription for meetings, podcasts, and interviews. Specialized transcription includes bilingual (Spanish ↔ English), legal, academic, and medical transcription. Optional services include translation, timestamps, and clean or full verbatim formatting.
     </p>
   </div>
 
 <section>
-  <h2>Let's get to work</h2>
-  <p> Tell us what you need—whether it’s administrative support, transcription, or bilingual services—and we’ll send you a customized quote.</p>
+  <h2 data-i18n="ctaHeading">Let's get to work</h2>
+  <p data-i18n="ctaText"> Tell us what you need—whether it's administrative support, transcription, or bilingual services—and we'll send you a customized quote.</p>
   
   <p>787-244-7398</p>
 
   <a href="mailto:jesibelcva@gmail.com?subject=Request%20a%20Quote"
-   class="cta-button">
+   class="cta-button" data-i18n="ctaButton">
    Request a Free Quote
   </a>
   <a 
@@ -158,8 +177,65 @@
 </section>
 
   <footer>
-  <p>© 2026 Isla Administrative Services</p>
+  <p data-i18n="footerText">© 2026 Isla Administrative Services</p>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      headerTagline: "Reliable Administrative & Transcription Support for Growing Businesses",
+      aboutHeading: "About",
+      aboutText: "Isla Administrative Services provides professional administrative and transcription support to businesses and professionals who need reliable, detail-oriented assistance. Our goal is to help you save time, stay organized, and focus on what matters most.",
+      bannerText: " • Commitment • Confidentiality • Efficiency • Punctuality ",
+      servicesHeading: "Services",
+      servicesIntro: "We understand that every business and professional operates differently. Therefore, we create our packages to fit your specific needs.",
+      adminSupportTitle: "Administrative Support",
+      adminSupportText: "Calendar and email management, document preparation, data entry and database management, customer service (chat and email), documentation organization, travel coordination, invoice preparation and follow-up, meeting coordination, and office systems organization.",
+      transcriptionTitle: "Transcription Services",
+      transcriptionText: "General transcription for meetings, podcasts, and interviews. Specialized transcription includes bilingual (Spanish ↔ English), legal, academic, and medical transcription. Optional services include translation, timestamps, and clean or full verbatim formatting.",
+      ctaHeading: "Let's get to work",
+      ctaText: "Tell us what you need—whether it's administrative support, transcription, or bilingual services—and we'll send you a customized quote.",
+      ctaButton: "Request a Free Quote",
+      footerText: "© 2026 Isla Administrative Services"
+    },
+    es: {
+      headerTagline: "Apoyo Administrativo y de Transcripción Confiable para Negocios en Crecimiento",
+      aboutHeading: "Sobre Nosotros",
+      aboutText: "Isla Administrative Services ofrece apoyo administrativo y de transcripción profesional a negocios y profesionales que necesitan asistencia confiable y detallada. Nuestro objetivo es ayudarte a ahorrar tiempo, mantenerte organizado y enfocarte en lo que más importa.",
+      bannerText: " • Compromiso • Confidencialidad • Eficiencia • Puntualidad ",
+      servicesHeading: "Servicios",
+      servicesIntro: "Entendemos que cada negocio y profesional opera de manera diferente. Por eso, creamos nuestros paquetes para ajustarse a tus necesidades específicas.",
+      adminSupportTitle: "Apoyo Administrativo",
+      adminSupportText: "Gestión de calendario y correo electrónico, preparación de documentos, entrada de datos y manejo de bases de datos, servicio al cliente (chat y correo electrónico), organización de documentación, coordinación de viajes, preparación y seguimiento de facturas, coordinación de reuniones, y organización de sistemas de oficina.",
+      transcriptionTitle: "Servicios de Transcripción",
+      transcriptionText: "Transcripción general para reuniones, podcasts y entrevistas. La transcripción especializada incluye bilingüe (español ↔ inglés), legal, académica y médica. Los servicios opcionales incluyen traducción, marcas de tiempo, y formato limpio o verbatim completo.",
+      ctaHeading: "Comencemos a trabajar",
+      ctaText: "Cuéntanos qué necesitas—ya sea apoyo administrativo, transcripción o servicios bilingües—y te enviaremos una cotización personalizada.",
+      ctaButton: "Solicita una Cotización Gratis",
+      footerText: "© 2026 Isla Administrative Services"
+    }
+  };
+
+  let currentLang = "en";
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    document.getElementById("lang-toggle").textContent = lang === "en" ? "Español" : "English";
+  }
+
+  document.getElementById("lang-toggle").addEventListener("click", () => {
+    setLanguage(currentLang === "en" ? "es" : "en");
+  });
+</script>
 
 </body>
 </html>
